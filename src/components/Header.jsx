@@ -22,28 +22,18 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-8 items-center">
             {session ? (
               <>
-                <Link
-                  href="/jobs"
-                  className="text-gray-700 hover:text-primary-600 font-medium transition"
-                >
+                <Link href="/jobs" className="text-gray-700 hover:text-primary-600 font-medium transition">
                   Browse Jobs
                 </Link>
                 {session.user?.role === "RECRUITER" && (
-                  <Link
-                    href="/recruiter/jobs"
-                    className="text-gray-700 hover:text-primary-600 font-medium transition"
-                  >
+                  <Link href="/recruiter/jobs" className="text-gray-700 hover:text-primary-600 font-medium transition">
                     My Jobs
                   </Link>
                 )}
-                <Link
-                  href="/dashboard"
-                  className="text-gray-700 hover:text-primary-600 font-medium transition"
-                >
+                <Link href="/dashboard" className="text-gray-700 hover:text-primary-600 font-medium transition">
                   Dashboard
                 </Link>
                 <button
@@ -56,10 +46,7 @@ export function Header() {
               </>
             ) : (
               <>
-                <Link
-                  href="/login"
-                  className="text-gray-700 hover:text-primary-600 font-medium transition"
-                >
+                <Link href="/login" className="text-gray-700 hover:text-primary-600 font-medium transition">
                   Login
                 </Link>
                 <Link
@@ -73,7 +60,6 @@ export function Header() {
             )}
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition"
@@ -82,7 +68,6 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <nav className="md:hidden pb-4 flex flex-col gap-4 border-t border-gray-100 pt-4">
             {session ? (

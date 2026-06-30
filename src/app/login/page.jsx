@@ -13,7 +13,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
@@ -40,14 +40,12 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center py-12 px-4">
       <div className="w-full max-w-md">
-        {/* Logo */}
         <div className="flex justify-center mb-8">
           <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
             JP
           </div>
         </div>
 
-        {/* Card */}
         <div className="bg-white rounded-lg shadow-card border border-gray-200 p-8">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome Back</h1>
           <p className="text-gray-600 mb-6">
@@ -115,7 +113,6 @@ export default function LoginPage() {
           </p>
         </div>
 
-        {/* Divider */}
         <div className="mt-6 text-center text-sm text-gray-600">
           <p>Demo Credentials</p>
           <p className="text-xs text-gray-500 mt-2">

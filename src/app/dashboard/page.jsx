@@ -24,7 +24,6 @@ export default function DashboardPage() {
 
   return (
     <div className="section-container py-12">
-      {/* Header */}
       <div className="mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Welcome back, {session.user?.name}!
@@ -39,33 +38,13 @@ export default function DashboardPage() {
       {isStudent ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {[
-            {
-              icon: Briefcase,
-              label: "Applications",
-              count: "12",
-              color: "blue",
-            },
-            {
-              icon: Heart,
-              label: "Saved Jobs",
-              count: "8",
-              color: "red",
-            },
-            {
-              icon: Clock,
-              label: "In Progress",
-              count: "3",
-              color: "yellow",
-            },
-            {
-              icon: FileText,
-              label: "My Resume",
-              count: "1",
-              color: "green",
-            },
+            { icon: Briefcase, label: "Applications", count: "12", color: "blue" },
+            { icon: Heart, label: "Saved Jobs", count: "8", color: "red" },
+            { icon: Clock, label: "In Progress", count: "3", color: "yellow" },
+            { icon: FileText, label: "My Resume", count: "1", color: "green" },
           ].map((stat, index) => {
             const Icon = stat.icon;
-            const colorMap: Record<string, string> = {
+            const colorMap = {
               blue: "bg-blue-50 text-blue-600",
               red: "bg-red-50 text-red-600",
               yellow: "bg-yellow-50 text-yellow-600",
@@ -85,33 +64,13 @@ export default function DashboardPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {[
-            {
-              icon: Briefcase,
-              label: "Active Jobs",
-              count: "5",
-              color: "blue",
-            },
-            {
-              icon: FileText,
-              label: "Applications",
-              count: "24",
-              color: "purple",
-            },
-            {
-              icon: Heart,
-              label: "Shortlisted",
-              count: "8",
-              color: "green",
-            },
-            {
-              icon: Clock,
-              label: "This Month",
-              count: "3",
-              color: "orange",
-            },
+            { icon: Briefcase, label: "Active Jobs", count: "5", color: "blue" },
+            { icon: FileText, label: "Applications", count: "24", color: "purple" },
+            { icon: Heart, label: "Shortlisted", count: "8", color: "green" },
+            { icon: Clock, label: "This Month", count: "3", color: "orange" },
           ].map((stat, index) => {
             const Icon = stat.icon;
-            const colorMap: Record<string, string> = {
+            const colorMap = {
               blue: "bg-blue-50 text-blue-600",
               purple: "bg-purple-50 text-purple-600",
               green: "bg-green-50 text-green-600",
@@ -130,7 +89,6 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="card">
           <h3 className="font-semibold text-gray-900 mb-4">Recent Activity</h3>
@@ -148,31 +106,19 @@ export default function DashboardPage() {
           <div className="space-y-3">
             {isStudent ? (
               <>
-                <Link
-                  href="/jobs"
-                  className="block w-full text-center bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 transition"
-                >
+                <Link href="/jobs" className="block w-full text-center bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 transition">
                   Browse Jobs
                 </Link>
-                <Link
-                  href="/profile"
-                  className="block w-full text-center bg-gray-100 text-gray-900 py-2 rounded-lg hover:bg-gray-200 transition"
-                >
+                <Link href="/profile" className="block w-full text-center bg-gray-100 text-gray-900 py-2 rounded-lg hover:bg-gray-200 transition">
                   Update Profile
                 </Link>
               </>
             ) : (
               <>
-                <Link
-                  href="/recruiter/post-job"
-                  className="block w-full text-center bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 transition"
-                >
+                <Link href="/recruiter/post-job" className="block w-full text-center bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 transition">
                   Post New Job
                 </Link>
-                <Link
-                  href="/recruiter/applications"
-                  className="block w-full text-center bg-gray-100 text-gray-900 py-2 rounded-lg hover:bg-gray-200 transition"
-                >
+                <Link href="/recruiter/applications" className="block w-full text-center bg-gray-100 text-gray-900 py-2 rounded-lg hover:bg-gray-200 transition">
                   View Applications
                 </Link>
               </>

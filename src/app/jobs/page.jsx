@@ -4,37 +4,20 @@ import { useEffect, useState } from "react";
 import { JobCard } from "@/components/JobCard";
 import { Search, Filter, MapPin, Briefcase } from "lucide-react";
 
-interface Job {
-  id: string;
-  title: string;
-  description: string;
-  location: string;
-  salary?: string;
-  jobType: string;
-  workMode: string;
-  skills: string[];
-  recruiter: {
-    companyName: string;
-  };
-}
-
 export default function JobsPage() {
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const [jobs, setJobs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedJobType, setSelectedJobType] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch jobs - will be implemented with API
     setIsLoading(false);
-    // Mock data for now
     setJobs([]);
   }, [searchTerm, selectedLocation, selectedJobType]);
 
   return (
     <div>
-      {/* Filter Section */}
       <div className="bg-white border-b border-gray-200 sticky top-16 z-40">
         <div className="section-container py-6">
           <div className="space-y-4">
@@ -90,7 +73,6 @@ export default function JobsPage() {
         </div>
       </div>
 
-      {/* Jobs Listing */}
       <div className="section-container py-12">
         {isLoading ? (
           <div className="text-center py-12">
@@ -101,12 +83,8 @@ export default function JobsPage() {
             <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Briefcase className="text-gray-600" size={32} />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              No jobs found
-            </h2>
-            <p className="text-gray-600">
-              Try adjusting your filters or search terms
-            </p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">No jobs found</h2>
+            <p className="text-gray-600">Try adjusting your filters or search terms</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -129,23 +107,14 @@ export default function JobsPage() {
               </div>
             </div>
 
-            {/* Sidebar */}
             <div className="hidden lg:block">
               <div className="card sticky top-32">
                 <h3 className="font-semibold text-gray-900 mb-4">Quick Tips</h3>
                 <ul className="space-y-3 text-sm text-gray-600">
-                  <li>
-                    ✓ Use specific keywords to find relevant jobs
-                  </li>
-                  <li>
-                    ✓ Filter by location and job type
-                  </li>
-                  <li>
-                    ✓ Save jobs for later review
-                  </li>
-                  <li>
-                    ✓ Upload an updated resume to your profile
-                  </li>
+                  <li>✓ Use specific keywords to find relevant jobs</li>
+                  <li>✓ Filter by location and job type</li>
+                  <li>✓ Save jobs for later review</li>
+                  <li>✓ Upload an updated resume to your profile</li>
                 </ul>
               </div>
             </div>

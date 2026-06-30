@@ -4,7 +4,6 @@ import { ArrowRight, Briefcase, Users, TrendingUp, Zap, Shield } from "lucide-re
 export default function Home() {
   return (
     <div className="bg-gradient-to-b from-blue-50 via-white to-purple-50">
-      {/* Hero Section */}
       <section className="relative overflow-hidden py-20 sm:py-32">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-custom rounded-full mix-blend-multiply filter blur-3xl" />
@@ -21,8 +20,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl sm:text-7xl font-black text-gray-900 mb-6 leading-tight">
-              Unlock Your{" "}
-              <span className="gradient-text">Future</span> with
+              Unlock Your <span className="gradient-text">Future</span> with
               <br />
               <span className="bg-gradient-to-r from-secondary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent">
                 Perfect Opportunities
@@ -53,7 +51,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="py-16 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -73,7 +70,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="section-container">
           <div className="text-center mb-16">
@@ -81,8 +77,7 @@ export default function Home() {
               Why Choose JobPortal?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We&apos;re committed to making job search simple, efficient, and
-              rewarding for everyone.
+              We&apos;re committed to making job search simple, efficient, and rewarding for everyone.
             </p>
           </div>
 
@@ -112,21 +107,14 @@ export default function Home() {
             ].map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div
-                  key={index}
-                  className="group card hover:shadow-glow border-0"
-                >
+                <div key={index} className="group card hover:shadow-glow border-0">
                   <div
                     className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
                   >
                     <Icon className="text-white" size={28} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -134,7 +122,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Section */}
       <section className="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -172,7 +159,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-vibrant opacity-20" />
         <div className="section-container relative">

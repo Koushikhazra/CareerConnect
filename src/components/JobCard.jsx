@@ -4,19 +4,6 @@ import { Bookmark, MapPin, Briefcase, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-interface JobCardProps {
-  id: string;
-  title: string;
-  companyName: string;
-  location: string;
-  salary?: string;
-  jobType: string;
-  workMode: string;
-  skills: string[];
-  description: string;
-  saved?: boolean;
-}
-
 export function JobCard({
   id,
   title,
@@ -28,7 +15,7 @@ export function JobCard({
   skills,
   description,
   saved = false,
-}: JobCardProps) {
+}) {
   const [isSaved, setIsSaved] = useState(saved);
 
   return (
@@ -66,18 +53,13 @@ export function JobCard({
         </span>
       </div>
 
-      {salary && (
-        <p className="text-sm font-semibold text-gray-900 mb-4">{salary}</p>
-      )}
+      {salary && <p className="text-sm font-semibold text-gray-900 mb-4">{salary}</p>}
 
       <div className="mb-4">
         <p className="text-xs text-gray-600 font-medium mb-2">Key Skills</p>
         <div className="flex flex-wrap gap-1">
           {skills.slice(0, 3).map((skill) => (
-            <span
-              key={skill}
-              className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
-            >
+            <span key={skill} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
               {skill}
             </span>
           ))}
